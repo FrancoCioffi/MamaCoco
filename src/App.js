@@ -8,6 +8,7 @@ import GuiaUsuario from './components/GuiaUsuario';
 import RecetaDetallada from './components/RecetaDetallada'; // Importa el nuevo componente
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+
 function App() {
   return (
     <Router>

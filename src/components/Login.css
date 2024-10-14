@@ -86,18 +86,6 @@ header ul li a:hover {
     z-index: 1000;
 }
 
-.recetas {
-    margin-top: 120px; 
-    padding: 3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f4f4f4; /* Fondo claro para destacar el formulario */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-}
-
 .container {
     max-width: 400px; /* Limitar el ancho del formulario */
     width: 100%; /* Asegura que ocupe todo el ancho disponible */

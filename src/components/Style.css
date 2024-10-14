@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +27,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 3em; 
-    background-color: orange;
+    background-color: rgb(224, 152, 16);
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -87,23 +88,22 @@ header ul li a:hover {
     margin-top: 100px; 
     z-index: 1000;
 }
-
-.recetas {
-    margin-top: 120px; 
-    padding: 3em;
-    text-align: center;
+.custom-carousel .carousel .slide {
+    height: auto; /* Permite que la altura del carrusel se ajuste al contenido */
 }
 
-.recetas h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.carruseles {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permite que los carruseles se ajusten en múltiples filas si es necesario */
+    gap: 20px; /* Añade un espacio entre los carruseles */
+    padding: 20px; /* Añade un padding alrededor del contenedor */
 }
 
-.recetas-flex {
-    display: flex; /* Activa Flexbox */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas */
-    justify-content: center; /* Centra los elementos en el contenedor */
-    gap: 2em; /* Espaciado entre los elementos */
+.carrusel-container {
+    width: calc(33.33% - 40px); /* Ajusta el ancho de los carruseles para que se distribuyan en tres columnas */
+    min-width: 250px; /* Establece un ancho mínimo para mantener una buena apariencia */
+    box-sizing: border-box; /* Asegura que el padding y border no afecten el ancho */
 }
 
 .receta {
@@ -111,32 +111,33 @@ header ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1em;
-    text-align: center;
-    flex: 0 1 300px; /* Flex-grow: 0; Flex-shrink: 1; Base size: 300px */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el zoom y la sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .receta:hover {
-    transform: scale(1.05); /* Aplica el zoom a toda la tarjeta */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para dar efecto de profundidad */
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .receta img {
     width: 100%;
-    height: 200px; /* Mantiene una altura constante para las imágenes */
-    object-fit: cover; /* Mantiene la proporción de las imágenes */
-    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+.receta h5 { 
+    font-size:  20px;
+}
+@media (max-width: 900px) {
+    .carrusel-container {
+        width: calc(50% - 40px); /* En pantallas más pequeñas, los carruseles ocupan dos columnas */
+    }
 }
 
-.receta h3 {
-    margin: 15px 0;
-    font-size: 1.5em; /* Tamaño del nombre de la receta */
-    color: #333; /* Color del texto */
-}
-
-.receta p {
-    color: #666;
-    font-size: 1.1em; 
+@media (max-width: 600px) {
+    .carrusel-container {
+        width: 100%; /* En pantallas pequeñas, los carruseles ocupan toda la fila */
+    }
 }
 
 .infocontacto {
@@ -177,10 +178,7 @@ header ul li a:hover {
     margin-right: 10px;
     color: #ff6b6b;
 }
-.cat{
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
+
 /* Estilo para los enlaces */
 a {
     text-decoration: none; /* Elimina el subrayado */
